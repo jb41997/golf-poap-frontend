@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+  --navHeight: 6rem;
+  --footHeight: 6rem;
+  --mainTextColor: white;
+  --accentColor: #b1de00;
+  --primeColor: #468902;
+  --yellowColor: #b8a200;
+}

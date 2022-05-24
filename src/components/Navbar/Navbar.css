@@ -1,0 +1,135 @@
+nav{
+    padding: 20px;
+    height: var(--navHeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    position: fixed;
+    width:100%;
+    z-index: 99;
+    box-shadow: 0px 2px 8px var(--primeColor);
+}
+  
+nav h2{
+    font-style: italic;
+    margin: 1rem 1rem 1rem 2rem;
+    font-size: 2rem;
+}
+
+#nav-links-full{
+    display:flex;
+}
+
+#nav-links-small{
+    display:none;
+}
+
+.nav--links{
+    margin-right: 1rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  
+.nav--links a{
+    color:white;
+    font-size:1.25rem;
+    text-decoration: none;
+    margin:0 1rem;
+    border-radius: 3px;
+    padding:5px;
+}
+  
+.nav--links a:hover,
+.nav--links a:focus,
+.active{
+    color:black;
+    background-color: var(--yellowColor);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu--icon{
+    display: none;
+}
+
+.logo--bars div a{
+    color:white;
+    text-decoration: none;
+}
+
+@media (max-width:400px){
+    nav h2{
+        margin-left: 0.5rem;
+    }
+  }
+
+
+@media (max-width:900px){
+    nav{
+        flex-direction:column;
+    }
+
+    #nav-links-full{
+        display:none;
+    }
+    
+    #nav-links-small{
+        display:flex;
+    }
+
+    nav h2{
+        margin-bottom: 1rem;
+    }
+
+    .logo--bars {
+        width:100%;
+        height: 100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    .menu--icon{
+        display:flex;
+        cursor:pointer;
+        transform: rotate(90deg);
+        transition: all 0.5s ease-in-out;
+    }
+    .menu--icon .times{
+        transform: rotate(180deg);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu--icon .bars{
+        transform: rotate(90deg);
+        transition: all 0.2s ease-in-out;
+    }
+    .nav--links{
+        background-color: rgba(0,0,0,0.8);
+        position:fixed;
+        top: var(--navHeight);
+        color: white;
+        display:flex;
+        align-items:center;
+        margin-right: 1rem;
+        flex-direction: column;
+        justify-content: space-around;
+        width:100%;
+        transition: all 0.5s ease-in-out;
+        height: auto;
+        overflow:hidden;
+        padding: 1rem;
+        box-shadow: 0px 2px 8px var(--primeColor);
+    }
+    .nav--links.close{
+        transform:translateX(120%);
+    }
+    .nav--links a{
+        width:100px;
+        text-align: center;
+    }
+
+}
+
