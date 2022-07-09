@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import Card from "../components/Card/Card";
-import "./Patrons.css";
-import PropTypes from "prop-types";
+import { useState, useEffect } from 'react'
+import Card from '../components/Card/Card'
+import './Patrons.css'
+import PropTypes from 'prop-types'
 
 const Patrons = (props) => {
-  const [existingTokens, setExistingTokens] = useState([]);
+  const [existingTokens, setExistingTokens] = useState([])
 
   const fetchEvents = async () => {
     const resp = await fetch(
       `https://api.poap.xyz/actions/scan/${props.currentAccount}`,
       {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       }
-    );
+    )
 
     if (!resp.ok) {
-      const message = `An error has occured: ${resp.status}`;
-      throw new Error(message);
+      const message = `An error has occured: ${resp.status}`
+      throw new Error(message)
     }
 
-    const data = await resp.json();
-    return data;
-  };
+    const data = await resp.json()
+    return data
+  }
 
   const eventList = existingTokens.map((item) => {
     return (
@@ -34,25 +34,25 @@ const Patrons = (props) => {
         end={item.event.end_date}
         tokenid={item.tokenId}
       />
-    );
-  });
+    )
+  })
 
   const callFetchEvents = () => {
-    props.setLoading(true);
+    props.setLoading(true)
     fetchEvents()
       .then((data) => {
-        setExistingTokens((prev) => [...prev, ...data]);
-        props.setLoading(false);
+        setExistingTokens((prev) => [...prev, ...data])
+        props.setLoading(false)
       })
       .catch((error) => {
-        props.setLoading(false);
-        console.log(error.message);
-      });
-  };
+        props.setLoading(false)
+        console.log(error.message)
+      })
+  }
 
   useEffect(() => {
-    callFetchEvents();
-  }, []);
+    callFetchEvents()
+  }, [])
 
   return (
     <div className="patrons--container">
@@ -60,12 +60,12 @@ const Patrons = (props) => {
       <hr></hr>
       <div className="tokens--container">{eventList}</div>
     </div>
-  );
-};
+  )
+}
 
 Patrons.propTypes = {
   currentAccount: PropTypes.object,
   setLoading: PropTypes.func,
-};
+}
 
-export default Patrons;
+export default Patrons

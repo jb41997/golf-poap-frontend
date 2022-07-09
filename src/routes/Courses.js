@@ -1,18 +1,18 @@
-import { useState, useEffect, useRef } from "react";
-import Card from "../components/Card/Card";
-import "./Courses.css";
-import PropTypes from "prop-types";
+import { useState, useEffect, useRef } from 'react'
+import Card from '../components/Card/Card'
+import './Courses.css'
+import PropTypes from 'prop-types'
 
 const Courses = (props) => {
-  const [existingEvents, setExistingEvents] = useState([]);
-  const [offSet, setOffSet] = useState(0);
-  const [search, setSearch] = useState("");
-  const initialLoad = useRef(true);
-  const limit = 10;
+  const [existingEvents, setExistingEvents] = useState([])
+  const [offSet, setOffSet] = useState(0)
+  const [search, setSearch] = useState('')
+  const initialLoad = useRef(true)
+  const limit = 10
   const poapIds = [
     9493, 9450, 8997, 8251, 7724, 15498, 12674, 11551, 10119, 15247, 14865,
     12417,
-  ];
+  ]
 
   const fetchEvents = async () => {
     const resp = await fetch(
@@ -20,19 +20,19 @@ const Courses = (props) => {
         poapIds.toString()
       )}&limit=${limit}&offset=${offSet}`,
       {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       }
-    );
+    )
 
     if (!resp.ok) {
-      const message = `An error has occured: ${resp.status}`;
-      throw new Error(message);
+      const message = `An error has occured: ${resp.status}`
+      throw new Error(message)
     }
 
-    const data = await resp.json();
-    return data;
-  };
+    const data = await resp.json()
+    return data
+  }
 
   const eventList = existingEvents.map((item) => {
     return (
@@ -43,21 +43,21 @@ const Courses = (props) => {
         id={item.id}
         end={item.end_date}
       />
-    );
-  });
+    )
+  })
 
   const callFetchEvents = () => {
-    props.setLoading(true);
+    props.setLoading(true)
     fetchEvents()
       .then((data) => {
-        setExistingEvents((prev) => [...prev, ...data.items]);
-        props.setLoading(false);
+        setExistingEvents((prev) => [...prev, ...data.items])
+        props.setLoading(false)
       })
       .catch((error) => {
-        props.setLoading(false);
-        console.log(error.message);
-      });
-  };
+        props.setLoading(false)
+        console.log(error.message)
+      })
+  }
 
   // console.log(search)
   // console.log(existingEvents)
@@ -65,23 +65,23 @@ const Courses = (props) => {
   // console.log(existingEvents.length % limit)
 
   useEffect(() => {
-    callFetchEvents();
-  }, [offSet]);
+    callFetchEvents()
+  }, [offSet])
 
   useEffect(() => {
     if (initialLoad.current) {
-      initialLoad.current = false;
+      initialLoad.current = false
     } else {
       const delayDebounce = setTimeout(() => {
-        console.log("debounce");
-        setExistingEvents([]);
-        setOffSet(0);
-        callFetchEvents();
-      }, 2000);
+        console.log('debounce')
+        setExistingEvents([])
+        setOffSet(0)
+        callFetchEvents()
+      }, 2000)
 
-      return () => clearTimeout(delayDebounce);
+      return () => clearTimeout(delayDebounce)
     }
-  }, [search]);
+  }, [search])
 
   return (
     <div className="courses--container">
@@ -101,21 +101,21 @@ const Courses = (props) => {
           className="btn btn--connect"
           disabled={props.loading}
           onClick={() => {
-            setOffSet((prev) => prev + limit);
+            setOffSet((prev) => prev + limit)
           }}
         >
           Next Page
         </button>
       ) : (
-        ""
+        ''
       )}
     </div>
-  );
-};
+  )
+}
 
 Courses.propTypes = {
   setLoading: PropTypes.func,
   loading: PropTypes.bool,
-};
+}
 
-export default Courses;
+export default Courses

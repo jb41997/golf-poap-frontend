@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import "./styles/index.css";
-import App from "./App";
-import Courses from "./routes/Courses";
-import Patrons from "./routes/Patrons";
-import About from "./routes/About";
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import './styles/index.css'
+import App from './App'
+import Courses from './routes/Courses'
+import Patrons from './routes/Patrons'
+import About from './routes/About'
 
 const Index = () => {
-  const [currentAccount, setCurrentAccount] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [currentAccount, setCurrentAccount] = useState('')
+  const [loading, setLoading] = useState(false)
 
   return (
     <React.StrictMode>
@@ -60,7 +60,7 @@ const Index = () => {
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
-  );
-};
+  )
+}
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById('root'))

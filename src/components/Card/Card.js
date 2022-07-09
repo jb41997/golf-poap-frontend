@@ -1,5 +1,5 @@
-import "./Card.css";
-import PropTypes from "prop-types";
+import './Card.css'
+import PropTypes from 'prop-types'
 
 const Card = (props) => {
   return (
@@ -20,7 +20,7 @@ const Card = (props) => {
           <div className="card--body">
             <h3 title={props.name}>
               {props.name.length > 35
-                ? props.name.substr(0, 34) + "\u2026"
+                ? props.name.substr(0, 34) + '\u2026'
                 : props.name}
             </h3>
             <div className="card--details">
@@ -35,8 +35,8 @@ const Card = (props) => {
         </div>
       </a>
     </div>
-  );
-};
+  )
+}
 
 Card.propTypes = {
   tokenid: PropTypes.string,
@@ -44,6 +44,6 @@ Card.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
   end: PropTypes.string,
-};
+}
 
-export default Card;
+export default Card

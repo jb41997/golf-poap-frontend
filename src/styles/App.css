@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    url("../assets/golf-g9d1febcea_1920.jpg");
+    url('../assets/golf-g9d1febcea_1920.jpg');
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 65%, rgba(255, 255, 255, 0) 100%), url("../assets/pexels-kindel-media-6573884.jpg"); */
   background-size: cover;
 }
@@ -107,7 +107,7 @@
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("../assets/33478_crop.jpg");
+    url('../assets/33478_crop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 20%;
@@ -117,7 +117,7 @@
 
 .btn {
   padding: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: black;
   text-decoration: none;
   font-style: normal;
@@ -150,7 +150,7 @@
 
 .left--welcome a {
   color: black;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;

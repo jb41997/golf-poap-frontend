@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import './Navbar.css'
 
 const Navbar = () => {
-  const [menuClick, setMenuClick] = useState(false);
+  const [menuClick, setMenuClick] = useState(false)
 
   return (
     <div>
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
         <div
           id="nav-links-full"
-          className={menuClick ? "nav--links" : "nav--links close"}
+          className={menuClick ? 'nav--links' : 'nav--links close'}
         >
           <Link to="/" onClick={() => setMenuClick(false)}>
             Home
@@ -54,7 +54,7 @@ const Navbar = () => {
       </nav>
       <div
         id="nav-links-small"
-        className={menuClick ? "nav--links" : "nav--links close"}
+        className={menuClick ? 'nav--links' : 'nav--links close'}
       >
         <Link to="/" onClick={() => setMenuClick(false)}>
           Home
@@ -70,7 +70,7 @@ const Navbar = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

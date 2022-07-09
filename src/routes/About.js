@@ -1,5 +1,5 @@
 const About = () => {
-  return <h1>This is the About Route!</h1>;
-};
+  return <h1>This is the About Route!</h1>
+}
 
-export default About;
+export default About
