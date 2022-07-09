@@ -1,5 +1,5 @@
-import React from 'react';
-import './LoadingIndicator.css';
+import "./LoadingIndicator.css";
+import PropTypes from "prop-types";
 
 const LoadingIndicator = (props) => {
   return props.trigger ? (
@@ -11,7 +11,13 @@ const LoadingIndicator = (props) => {
         <div></div>
       </div>
     </div>
-  ) : "";
+  ) : (
+    ""
+  );
+};
+
+LoadingIndicator.propTypes = {
+  trigger: PropTypes.bool,
 };
 
 export default LoadingIndicator;
