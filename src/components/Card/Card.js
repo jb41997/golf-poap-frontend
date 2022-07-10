@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Card = (props) => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-testid={`card-${props.id}`}>
       <a
         href={
           props.tokenid
@@ -39,6 +39,7 @@ const Card = (props) => {
 }
 
 Card.propTypes = {
+  key: PropTypes.string,
   tokenid: PropTypes.string,
   id: PropTypes.string,
   img: PropTypes.string,

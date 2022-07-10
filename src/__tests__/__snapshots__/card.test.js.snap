@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="wrapper"
+  data-testid="card-0"
+>
+  <a
+    href="https://app.poap.xyz/token/tokenid-1"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <div
+      className="card--container"
+    >
+      <div
+        className="card--header"
+      >
+        <img
+          alt="test-image"
+          src="https://picsum.photos/200/200"
+        />
+      </div>
+      <div
+        className="card--body"
+      >
+        <h3
+          title="test-image"
+        >
+          test-image
+        </h3>
+        <div
+          className="card--details"
+        >
+          <div
+            className="event--id"
+            title="Event ID"
+          >
+            #
+            0
+          </div>
+          <div
+            className="event--end"
+            title="End Date"
+          >
+            10-2022
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
