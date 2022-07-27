@@ -10,7 +10,7 @@ afterEach(() => {
 test('should render card component', () => {
   const testProps = {
     tokenid: 'tokenid-1',
-    id: '0',
+    id: 0,
     img: 'https://picsum.photos/200/200',
     name: 'test-image',
     end: '10-2022',
@@ -33,7 +33,7 @@ test('should render card component', () => {
 test('matches snapshot', () => {
   const testProps = {
     tokenid: 'tokenid-1',
-    id: '0',
+    id: 0,
     img: 'https://picsum.photos/200/200',
     name: 'test-image',
     end: '10-2022',
