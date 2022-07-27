@@ -161,7 +161,7 @@ function App(props) {
 
 App.propTypes = {
   setCurrentAccount: PropTypes.func,
-  currentAccount: PropTypes.object,
+  currentAccount: PropTypes.string,
   loading: PropTypes.bool,
 }
 

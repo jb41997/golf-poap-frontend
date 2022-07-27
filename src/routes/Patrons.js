@@ -64,7 +64,7 @@ const Patrons = (props) => {
 }
 
 Patrons.propTypes = {
-  currentAccount: PropTypes.object,
+  currentAccount: PropTypes.string,
   setLoading: PropTypes.func,
 }
 
